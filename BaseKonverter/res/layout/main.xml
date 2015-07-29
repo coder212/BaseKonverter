@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <EditText
+        android:id="@+id/biner"
+        android:singleLine="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/binerhint"
+        android:imeOptions="actionDone"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="57dp"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/octal"
+        android:singleLine="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/octalhint"
+        android:imeOptions="actionDone"
+        android:layout_alignStart="@+id/biner"
+        android:layout_below="@+id/biner"
+        android:layout_marginTop="29dp"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/decimal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/decimalhint"
+        android:imeOptions="actionDone"
+        android:inputType="number|phone"
+        android:layout_alignStart="@+id/octal"
+        android:layout_below="@+id/octal"
+        android:singleLine="true"
+        android:layout_marginTop="36dp"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/hexa"
+        android:singleLine="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/hexahint"
+        android:imeOptions="actionDone"
+        android:layout_alignStart="@+id/decimal"
+        android:layout_below="@+id/decimal"
+        android:layout_marginTop="24dp"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/textbiner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/biner"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="33dp"
+        android:text="@string/binerhint" />
+
+    <TextView
+        android:id="@+id/textoktal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textbiner"
+        android:layout_below="@+id/biner"
+        android:layout_marginTop="14dp"
+        android:text="@string/octalhint" />
+
+    <TextView
+        android:id="@+id/textdecimal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textoktal"
+        android:layout_below="@+id/octal"
+        android:text="@string/decimalhint" />
+
+    <TextView
+        android:id="@+id/texthexa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textdecimal"
+        android:layout_below="@+id/decimal"
+        android:text="@string/hexahint" />
+
+</RelativeLayout>
