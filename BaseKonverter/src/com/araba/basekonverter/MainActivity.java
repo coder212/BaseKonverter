@@ -7,10 +7,9 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.inputmethod.EditorInfo;
+import android.view.View;
+import android.view.View.OnKeyListener;
 import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.TextView.OnEditorActionListener;
 
 public class MainActivity extends Activity {
 
@@ -29,12 +28,12 @@ public class MainActivity extends Activity {
 		decimal=(EditText)findViewById(R.id.decimal);
 		hexa=(EditText)findViewById(R.id.hexa);
 		
-		biner.setOnEditorActionListener(new OnEditorActionListener() {
+		biner.setOnKeyListener(new OnKeyListener() {
 			
 			@Override
-			public boolean onEditorAction(TextView arg0, int arg1, KeyEvent event) {
+			public boolean onKey(View view, int keycode, KeyEvent event) {
 				// TODOs Auto-generated method stub
-				if (arg1==EditorInfo.IME_ACTION_DONE) {
+				if (keycode==KeyEvent.KEYCODE_ENTER) {
 			           // the user is done typing.
 					String bil_Biner = biner.getText().toString();
 					try{
@@ -52,14 +51,15 @@ public class MainActivity extends Activity {
 			        }  
 				return false;
 			}
+				
 		});
 		
-		octal.setOnEditorActionListener(new OnEditorActionListener() {
+		octal.setOnKeyListener(new OnKeyListener() {
 			
 			@Override
-			public boolean onEditorAction(TextView arg0, int arg1, KeyEvent arg2) {
+			public boolean onKey(View view, int keycode, KeyEvent event) {
 				// TODOs Auto-generated method stub
-				if(arg1==EditorInfo.IME_ACTION_DONE){
+                if(keycode==KeyEvent.KEYCODE_ENTER){
 					
 					String bil_Octal = octal.getText().toString();
 					try{
@@ -77,12 +77,12 @@ public class MainActivity extends Activity {
 			}
 		});
 		
-		decimal.setOnEditorActionListener(new OnEditorActionListener() {
+		decimal.setOnKeyListener(new OnKeyListener() {
 			
 			@Override
-			public boolean onEditorAction(TextView arg0, int arg1, KeyEvent arg2) {
+			public boolean onKey(View view, int keyCode, KeyEvent event) {
 				// TODOs Auto-generated method stub
-				if(arg1==EditorInfo.IME_ACTION_DONE){
+                if(keyCode==KeyEvent.KEYCODE_ENTER){
 					
 				    try{
 					   int bil_Des = Integer.parseInt(decimal.getText().toString());
@@ -100,12 +100,12 @@ public class MainActivity extends Activity {
 			}
 		});
 		
-		hexa.setOnEditorActionListener(new OnEditorActionListener() {
+		hexa.setOnKeyListener(new OnKeyListener() {
 			
 			@Override
-			public boolean onEditorAction(TextView arg0, int arg1, KeyEvent arg2) {
+			public boolean onKey(View view, int keycode, KeyEvent event) {
 				// TODOs Auto-generated method stub
-				if(arg1==EditorInfo.IME_ACTION_DONE){
+                if(keycode==KeyEvent.KEYCODE_ENTER){
 					
 					String bil_Hexa = hexa.getText().toString();
 					
